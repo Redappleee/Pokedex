@@ -27,6 +27,79 @@
     --drop-shadow-hover: 0px 3px 12px 3px rgba(0, 0, 0, 0.2);
     --drop-shadow-inner: 0px 1px 3px 1px rgba(0, 0, 0, 0.25) inset;
   }
+
+
+
+/* Gates */
+.gate {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    width: 50%;
+    z-index: 10;
+  }
+  
+  /* Left Gate */
+  .left-gate {
+    left: 0;
+    transform: translateX(0);
+    background-image: url("./Frame 1.svg");
+    background-repeat: no-repeat;
+    background-size: cover; /* Ensure the image covers the gate */
+  }
+  
+  /* Right Gate */
+  .right-gate {
+    right: 0;
+    transform: translateX(0);
+    background-image: url("./Frame 2.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  /* Gate Opening Animation */
+  @keyframes openLeftGate {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+  
+  @keyframes openRightGate {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(100%);
+    }
+  }
+  
+  /* When the animation is triggered */
+  .left-gate.open {
+    animation: openLeftGate 2s ease forwards;
+  }
+  
+  .right-gate.open {
+    animation: openRightGate 2s ease forwards;
+  }
+  
+  /* Responsive Styling for Mobile Devices */
+  @media (max-width: 768px) {
+    .left-gate {
+      background-image: url("./Android\ Medium\ -\ 1.svg"); /* Use a mobile-optimized image */
+    }
+  
+    .right-gate {
+      background-image: url("./Android\ Medium\ -\ 2.svg"); /* Use a mobile-optimized image */
+    }
+  }
+
+
+
+
+
   
   h2,
   h3,
